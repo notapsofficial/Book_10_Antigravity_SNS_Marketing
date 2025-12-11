@@ -1,25 +1,26 @@
-# Chapter 4: Global Expansion (KDP & Translation)
+# 第4章：世界へ広げる - KDPと多言語戦略
 
-The final piece of the Antigravity puzzle is scale. Not just scaling posts, but scaling *markets*. We expanded the project from a Japanese-only initiative to a global brand covering English (EN), Japanese (JP), Italian (IT), and Spanish (ES).
+SNSで集客できるようになったら、次は「商品」を世界に届けます。
+ここでもAntigravityが大活躍します。そう、今あなたが読んでいるこの本も、AIと共に書かれています。
 
-## The KDP Strategy
-Kindle Direct Publishing (KDP) is the ultimate long-tail marketing channel. A book is a product, but it's also a brochure that people pay to read.
-*   **Series Unification**: We grouped our disparate titles into a single series, "Quantum Self Assets," to boost visibility and cross-sell potential.
-*   **Metadata Optimization**: We treated book titles like SEO keywords. "Measurement Mistake in Life" became a targeted phrase to capture specific search intent.
+## 翻訳という壁を消す
 
-## The Translation Pipeline
-Translating a book manually is slow. We automated the *drafting* of translations.
-1.  **Source**: Master manuscript in Markdown.
-2.  **Process**: Script feeds chunks to an LLM with a specific "Persona Prompt" to maintain tone.
-3.  **Output**: `book_it.md`, `book_es.md`.
-4.  **Verification**: Human review for nuance (especially for the Italian "Measurement Mistake" title issue where we had to ensure we weren't misleading buyers).
+日本だけでビジネスをする必要はありません。Antigravityにこう頼めばいいのです。
 
-## The "Website" Hub
-All these books point back to the central hub: `particlesandwaves.org`.
-*   We updated `apps.ts` to handle routing for different languages.
-*   We ensured that a visitor from Italy sees the Italian book link first.
+> 「この原稿（Markdown）を、イタリア語とスペイン語に翻訳して。トーンは『プロフェッショナルかつ親しみやすく』」
 
-## Conclusion: Escape Velocity
-What started as a set of scripts is now a global media empire run by code. We have achieved "Antigravity." The friction is gone. We are free to create, while the system handles the gravity of distribution.
+数分で、`book_it.md`（イタリア語版）と `book_es.md`（スペイン語版）が出来上がります。
+ネイティブチェックが必要？
+それもAIに「このイタリア語のタイトル、不自然じゃない？誤解を生まない？」とセカンドオピニオンを求めれば解決です。
+実際、私は「測定ミス」という言葉がイタリア語で誤解を招かないか、AIと徹底的に議論してタイトルを決めました。
 
-The system is open for you to build. The only limit is your imagination.
+## Kindle Direct Publishing (KDP)
+
+AmazonのKDPを使えば、誰でも無料で世界中に出版できます。
+ここでのポイントは「シリーズ化」です。
+
+1.  **統一感**: 表紙デザインやタイトル周りを統一する（画像生成AIを活用）。
+2.  **メタデータ**: 「検索されやすいキーワード」をAIに分析させる。
+    > 「Kindleストアで『マーケティング』と検索する人が一緒に検索しそうなキーワードを10個挙げて」
+
+こうして、たった一人で「多言語・多展開」の出版帝国を築くことができるのです。

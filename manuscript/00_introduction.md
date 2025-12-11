@@ -1,16 +1,32 @@
-# Introduction: Defying the Gravity of Marketing
+# はじめに：重力への反逆
 
-Marketing, in its traditional form, is a battle against gravity. The "gravity" here is the constant, crushing weight of manual labor: the friction of logging in, the drag of copy-pasting, the heaviness of repetitive tasks, and the time-suck of analytics reporting. Every tweet, every post, every metric checked requires energy—mental and physical. For a solo creator or a small team, this gravity eventually grounds you. You stop posting. You stop measuring. You fail to reach escape velocity.
+## なぜ、SNS運用は続かないのか？
 
-This book is about "Antigravity."
+「毎日投稿しましょう」「複数のプラットフォームを活用しましょう」「分析して改善しましょう」
 
-It is the documentation of a system built to nullify that friction. Over the course of several sprints, we constructed a unified engine—the "Marketing_SNS" system—that automates the heavy lifting of social media presence. We built a command center (Dashboard) to see everything at a glance. We grew tentacles (APIs) to reach into X (Twitter), Threads, Pinterest, and YouTube simultaneously. We built an engine (Python scripts) to keep the ship moving forward every single day without human intervention.
+マーケティングの教科書には必ずそう書いてあります。頭ではわかっています。でも、身体が動かない。
+X (旧Twitter) を開き、投稿文を考え、画像を添付し、投稿ボタンを押す。次にInstagramを開き、サイズを調整し…その作業の一つ一つに、目に見えない「重力」がかかっているからです。
 
-This is not a theoretical marketing guide. It is a technical log of how we built a machine to do the marketing for us. It covers the code, the architecture, and the logic behind:
+面倒くさい。時間がない。ネタがない。
 
-1.  **The Dashboard**: A Vercel + Supabase application that aggregates metrics from incompatible platforms into a single source of truth.
-2.  **The Integrations**: How we navigated the complex (and often frustrating) API landscapes of major social networks.
-3.  **The Automation**: The scripts that turn a folder of images and text into a daily broadcast across the internet.
-4.  **The Expansion**: How we leveraged KDP and translation tools to sell this very knowledge to a global audience.
+この「重力」は、個人の情熱を簡単に押しつぶします。だから、私たちは途中で力尽き、アカウントは更新停止の墓場となるのです。
 
-Welcome to the cockpit. Let's look at the instruments.
+## Antigravity（反重力）を手に入れる
+
+もし、この重力を無効化できるとしたらどうでしょう？
+あなたが寝ている間に、誰かが勝手に投稿し、勝手に数字を集計し、勝手に改善してくれるとしたら？
+
+この本は、プログラミングの専門家ではない私が、AIエージェントである「Antigravity」とペアを組み、**たった一人で**、X、Threads、Pinterest、YouTubeを全自動で運用するシステムを作り上げた記録です。
+
+## コードは書かなくていい、指示を書こう
+
+この本には、難しいプログラムコードはほとんど出てきません。代わりに登場するのは、私がAntigravityに投げかけた「言葉（プロンプト）」です。
+
+*   「Vercelでカッコいいダッシュボードを作りたい」
+*   「このエラーが出たんだけど、どうすればいい？」
+*   「PinterestのAPIドキュメント、これなんだけど翻訳してやり方教えて」
+
+AI時代において、必要な力は「コードを書く力」ではなく「AIをガイドする力」です。
+
+さあ、重力のある世界から脱出しましょう。
+あなたがやるべきことは、コックピットに座り、Antigravityに「点火」の指示を出すことだけです。

@@ -1,29 +1,35 @@
-# Chapter 3: The Engine (Python Automation)
+# 第3章：エンジンを回す - 完全自動化へ
 
-With the Dashboard watching and the APIs connected, we needed an engine to drive the car. This is where Python shines. We built a suite of scripts in the `scripts/` directory to handle the daily grind.
+APIがつながっても、毎日手動でコマンドを叩いていては意味がありません。
+目指すのは「寝ていても勝手に投稿される」状態です。
 
-## The Core Script: `execute_daily_post.py`
-This is the heartbeat of the system.
-**Workflow:**
-1.  **Awaken**: The script triggers (via Cron or manual run).
-2.  **Fetch Content**: It looks into a content queue (or generates new ideas).
-3.  **Process Media**: It resizes images for Instagram/Threads (square) vs YouTube (16:9).
-4.  **Broadcast**: It calls the collection of API client classes we built in Chapter 2.
-5.  **Log**: It writes the result to the Supabase database, updating the Dashboard.
+## Pythonスクリプトという魔法の杖
 
-## Content Engineering
-We didn't just automate delivery; we experimented with automating *creation*.
-*   **Generative Text**: Using LLMs to draft tweet variations.
-*   **Image Processing**: Using Python's `PIL` (Pillow) library to overlay text on images programmatically. This allows us to turn a single quote into a visual asset suitable for Instagram and Pinterest.
+「Python」と聞くと身構えるかもしれませんが、AIにとっては母国語のようなものです。
+やりたいことを伝えるだけで、完璧なスクリプトが出てきます。
 
-## Secrets Management (`.env`)
-Security is paramount. We implemented strict `.env` file management.
-*   `THREADS_ACCESS_TOKEN`
-*   `TWITTER_CONSUMER_KEY`
-*   `YOUTUBE_CLIENT_SECRET`
-All sensitive keys are kept out of Git, loaded only at runtime using `python-dotenv`. This ensures that even if we open-source the engine, the keys to the kingdom remain safe.
+> 「フォルダに入っている画像を、毎日1枚ずつ、InstagramとPinterestに投稿するスクリプトを書いて。画像はリサイズしてね」
 
-## The "Part 2" Fix
-We encountered issues where long-running processes would timeout or get stuck. We split the logic into `execute_daily_post_part1.py` and `execute_daily_post_part2.py` (the backfill scripts) to decouple heavy media processing from quick status updates. This modular approach increased system reliability from 80% to 99%.
+これで、`execute_daily_post.py` というファイルが生まれます。
+中身を見る必要はありません。動けばいいのです。
 
-The Engine is now self-driving. It requires only fuel (content ideas) to keep running.
+## コンテンツも「生成」する
+
+投稿する画像や文章がない？ それもAIに作らせましょう。
+私のシステムでは、以下のような指示でコンテンツを量産しています。
+
+1.  **テキスト**: 「『失敗』に関する名言を10個考えて。JSON形式で出力して」
+2.  **画像**: 「この名言を背景画像の上に中央揃えで配置するPythonコードを書いて」
+
+AIはデザインもプログラミングで解決してくれます。Pillowというライブラリを使えば、100枚の画像生成も一瞬です。
+
+## 秘密の鍵は `.env` に隠す
+
+ここで一つ重要なセキュリティの話。
+APIキーなどのパスワード類は、絶対にコードに直接書いてはいけません。
+AIにこう聞いてください。
+
+> 「APIキーを安全に管理したい。`.env` ファイルの使い方を教えて」
+
+AIは、パスワードを別ファイルに隔離し、外部に漏れないようにする仕組み（dotenv）を実装してくれます。
+これも「お作法」として覚えておくと、プロっぽくなります。
