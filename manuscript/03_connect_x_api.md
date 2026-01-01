@@ -106,67 +106,42 @@ __pycache__/
 
 ## 第4章：接続テスト（Hello World）
 
-### 4-1. 環境の準備
+## 第4章：Antigravityに接続を依頼する
 
-ここでは Python を使用した例を紹介します。
-`tweepy` というライブラリが、ドキュメントも豊富で使いやすいため推奨しています。
+### 4-1. コードは書かなくていい
 
-```bash
-# 作業用の仮想環境を作成（推奨）
-python -m venv venv
-source venv/bin/activate  # Windowsの場合は venv\Scripts\activate
+ここから先は、あなたがコードを書く必要はありません。
+Part 0 でお伝えした通り、Antigravity (Google) の Workbench は、ブラウザ操作もコード実行も一元管理できる強力な環境です。
 
-# 必要なライブラリをインストール
-pip install tweepy python-dotenv
+ここまで準備してきた「API情報」と「やりたいこと」を伝えるだけで、実装はAntigravityが担当します。
+
+### 4-2. 依頼のためのプロンプト
+
+Antigravityに対して、以下のように指示を出してください。
+
+```markdown
+# Task
+X API (Basic Tier) への接続テストをお願いします。
+
+# Context
+- APIキー等の情報は、同階層の `.env` ファイルに記述してあります。
+- `tweepy` ライブラリを使用してください。
+- 投稿内容は "Hello, Antigravity System! [timestamp]" としてください。
+
+# Constraints
+- 事前に `.env` を読み込む実装にしてください。
+- コードを生成し、実行して結果を教えてください。
 ```
 
-### 4-2. テスト用スクリプト
+### 4-3. 実行結果の確認
 
-以下に、接続確認用のシンプルなスクリプト（`post_test.py`）を記載します。
+指示を出すと、Antigravityは自動的にPythonコードを生成し、環境構築（ライブラリのインストール等）を行った上で、スクリプトを実行します。
 
-```python
-import tweepy
-import os
-from dotenv import load_dotenv
+画面上に `Successfully posted` や `ID: xxxxx` といった実行結果が表示されれば完了です。
+もしエラーが出た場合も、Part 3-1 で紹介したように「このエラーを直して」と伝えるだけで、Antigravityが修正を行ってくれます。
 
-# .env ファイルから環境変数を読み込む
-load_dotenv()
-
-# Client の初期化
-client = tweepy.Client(
-    consumer_key=os.getenv("X_API_KEY"),
-    consumer_secret=os.getenv("X_API_SECRET"),
-    access_token=os.getenv("X_ACCESS_TOKEN"),
-    access_token_secret=os.getenv("X_ACCESS_TOKEN_SECRET")
-)
-
-def main():
-    try:
-        # 投稿内容は重複を防ぐため、テストごとに少し変えることをお勧めします
-        text = "Hello, Antigravity System! #ConnectionTest"
-        
-        response = client.create_tweet(text=text)
-        
-        print("======== 成功 ========")
-        print(f"以下のIDで投稿されました: {response.data['id']}")
-        print("ブラウザで自身のアカウントを確認してください。")
-        
-    except Exception as e:
-        print("======== エラー ========")
-        print(f"投稿に失敗しました。設定を確認してください。")
-        print(f"詳細: {e}")
-
-if __name__ == "__main__":
-    main()
-```
-
-### 4-3. 実行と確認
-
-ターミナルで以下のコマンドを実行します。
-
-```bash
-python post_test.py
-```
+これで、あなたのAntigravity環境から、世界（X）へのパスが開通しました。
+おめでとうございます。
 
 `======== 成功 ========"` と表示されれば、接続完了です。
 もしエラーが出ても、心配はいりません。
