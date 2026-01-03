@@ -42,7 +42,27 @@ APIの接続先を変えるだけで、同じように「コンセプトを渡�
 
 **Enjoy your Antigravity.**
 
+**「システムは完成しました。さあ、本当に作りたかったものを作りに行きましょう」**
+
 ---
 ### 参考文献
 *   D.D.Scotick 『フォロワー数ではなく、「預かる時間」が価値を決める時代へ: SNS依存を脱却し、複利で増える読者を手に入れる方法』 (Self Assets Series)
     *   [Amazon Link](https://www.amazon.co.jp/dp/B0G4FHC7W2)
+
+
+---
+
+## 著者略歴
+
+**D.D.Scotick**
+
+**主な著書**
+*   [キャリアなんてない: ロールを捨てて、価値をつくる力を手に入れよう](https://amzn.asia/d/5hKA3Ua)
+*   [ANTIGRAVITYx(通勤＋朝活）＝１日出版: 生活時間を創作に転換するためのAI活用術](https://amzn.asia/d/j3IECUu)
+*   [NULLに沈む世界で、僕はコードを書く: 開発ツール擬人化バトル小説](https://amzn.asia/d/gfUeOme)
+*   [フォロワー数では食えない時代の「資産型トラフィック」戦略](https://amzn.asia/d/3tLOPUr)
+
+**コンタクト**
+*   Email: support@particlesandwaves.org
+*   Web: [Particles and Waves](https://particlesandwaves.org/particles-and-waves/)
+*   App: [英単語 notaps en-jp 15000語](https://apps.apple.com/jp/app/%E8%8B%B1%E5%8D%98%E8%AA%9E-notaps-en-jp-15000%E8%AA%9E/id6745514473)
